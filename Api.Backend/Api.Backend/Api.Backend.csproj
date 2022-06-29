@@ -17,4 +17,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Dtos\Estoque\" />
+    <Folder Include="Data\Dtos\Instituicao\" />
+    <Folder Include="Data\Dtos\Usuario\" />
+    <Folder Include="Data\Dtos\Produto\" />
+  </ItemGroup>
+
 </Project>

@@ -13,7 +13,7 @@ namespace Api.Backend.Models
         [Key]
         [Required]
         public int Id { get; set; }
-        
+
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
 
@@ -25,8 +25,8 @@ namespace Api.Backend.Models
 
         public bool Ativo { get; set; }
 
-        [ForeignKey("Fk_produto_categoria")]
-        public virtual Categoria Categoria{ get; set; }
+        public virtual Categoria Categoria { get; set; }
+        public int CategoriaId { get; set; }
 
         public virtual IEnumerable<Estoque> Estoques { get; set; }
     }

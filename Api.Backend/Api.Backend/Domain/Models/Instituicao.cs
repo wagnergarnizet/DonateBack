@@ -43,8 +43,8 @@ namespace Api.Backend.Models
 
         public string Celular { get; set; }
 
-        [ForeignKey("Fk_instituicao_usuario")]
-        public virtual Usuario usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
 
         public virtual IEnumerable<Campanha> Campanhas { get; set; }
 

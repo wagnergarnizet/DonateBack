@@ -14,11 +14,11 @@ namespace Api.Backend.Models
         [Required]
         public int Id { get; set; }
 
-        [ForeignKey("Fk_estoque_produto")]
         public virtual Produto Produto { get; set; }
+        public int ProdutoId { get; set; }
 
-        [ForeignKey("Fk_estoque_campanha")]
         public virtual Campanha Campanha { get; set; }
+        public int CampanhaId { get; set; }
 
         public int Qtde { get; set; }
         public Tipo Tipo { get; set; }
