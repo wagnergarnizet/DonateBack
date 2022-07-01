@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
-namespace Api.Backend.Models
+namespace Api.Backend.Data.Dtos.Instituicao
 {
-    public class Instituicao
+    public class CreateInstituicaoDto
     {
-        [Key]
-        [Required]
-        public int Id { get; set; }
-
+       
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
 
@@ -44,11 +39,6 @@ namespace Api.Backend.Models
 
         public string Celular { get; set; }
 
-        public virtual Usuario Usuario { get; set; }
         public int UsuarioId { get; set; }
-        [JsonIgnore]
-        public virtual IEnumerable<Campanha> Campanhas { get; set; }
-
     }
 }
-

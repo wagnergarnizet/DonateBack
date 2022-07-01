@@ -9,6 +9,7 @@ namespace Api.Backend.Data.Dtos.Campanha
 {
     public class CreateCampanhaDto
     {
+
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
 
@@ -22,6 +23,8 @@ namespace Api.Backend.Data.Dtos.Campanha
         public DateTime Dt_inicio { get; set; }
 
         public DateTime Dt_fim { get; set; }
+
+        public int InstituicaoId { get; set; }
 
     }
 }

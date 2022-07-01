@@ -21,5 +21,8 @@ namespace Api.Backend.Data.Dtos.Campanha
         public DateTime Dt_inicio { get; set; }
 
         public DateTime Dt_fim { get; set; }
+
+        public int InstituicaoId { get; set; }
+
     }
 }

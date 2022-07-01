@@ -1,9 +1,10 @@
-﻿using Api.Backend.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace Api.Backend.Data.Dtos.Categoria
 {
@@ -16,8 +17,7 @@ namespace Api.Backend.Data.Dtos.Categoria
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
 
-
-        public virtual IEnumerable<Produto> Produtos { get; set; }
+        public virtual IEnumerable<Api.Backend.Models.Produto> Produtos { get; set; }
 
     }
 }

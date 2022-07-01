@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Api.Backend.Models
@@ -29,7 +30,7 @@ namespace Api.Backend.Models
 
         public virtual Instituicao Instituicao{ get; set; }
         public int InstituicaoId { get; set; }
-
+        [JsonIgnore]
         public virtual IEnumerable<Estoque> Estoques { get; set; }
 
     }

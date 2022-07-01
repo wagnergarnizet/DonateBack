@@ -2,14 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Api.Backend.Models
+namespace Api.Backend.Data.Dtos.Produto
 {
-    public class Produto
+    public class ReadProdutoDto
     {
         [Key]
         [Required]
@@ -26,9 +24,9 @@ namespace Api.Backend.Models
 
         public bool Ativo { get; set; }
 
-        public virtual Categoria Categoria { get; set; }
+        public virtual Api.Backend.Models.Categoria Categoria { get; set; }
         public int CategoriaId { get; set; }
-        [JsonIgnore]
-        public virtual IEnumerable<Estoque> Estoques { get; set; }
+
+        public virtual IEnumerable<Api.Backend.Models.Estoque> Estoques { get; set; }
     }
 }

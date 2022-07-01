@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Api.Backend.Enums;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using Api.Backend.Enums;
-using System.Text.Json.Serialization;
 
-namespace Api.Backend.Models
+namespace Api.Backend.Data.Dtos.Usuario
 {
-    public class Usuario
+    public class ReadUsuarioDto
     {
         [Key]
         [Required]
@@ -26,10 +25,6 @@ namespace Api.Backend.Models
         public Boolean Ativo { get; set; }
 
         public Funcao Funcao { get; set; }
-
-        [JsonIgnore]
-        public virtual IEnumerable<Instituicao> Instituicaos { get; set; }
-
 
     }
 }

@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
-namespace Api.Backend.Models
+namespace Api.Backend.Data.Dtos.Instituicao
 {
-    public class Instituicao
+    public class ReadInstituicaoDto
     {
         [Key]
         [Required]
@@ -44,11 +42,9 @@ namespace Api.Backend.Models
 
         public string Celular { get; set; }
 
-        public virtual Usuario Usuario { get; set; }
+        public virtual Api.Backend.Models.Usuario Usuario { get; set; }
         public int UsuarioId { get; set; }
-        [JsonIgnore]
-        public virtual IEnumerable<Campanha> Campanhas { get; set; }
 
+        public virtual IEnumerable<Api.Backend.Models.Campanha> Campanhas { get; set; }
     }
 }
-
