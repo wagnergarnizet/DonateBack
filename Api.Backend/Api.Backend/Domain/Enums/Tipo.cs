@@ -7,7 +7,7 @@ namespace Api.Backend.Enums
 {
     public enum Tipo
     {
-      Entrada,
+      Entrada = 1,
       Saida
     }
 }

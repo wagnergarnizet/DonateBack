@@ -7,7 +7,7 @@ namespace Api.Backend.Enums
 {
     public enum Funcao
     {
-        Administrador,
+        Administrador = 1,
         Usuario,
         Consulta
     }
