@@ -35,7 +35,7 @@ namespace Api.Backend.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Campanha> RecuperaCampanhas([FromQuery] string nomeDoFilme)
+        public IEnumerable<Campanha> RecuperaCampanhas([FromQuery] string nomeDaCampanha)
         {
             return _context.Campanhas;
         }

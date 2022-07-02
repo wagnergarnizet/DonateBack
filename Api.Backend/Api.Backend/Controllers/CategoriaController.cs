@@ -35,7 +35,7 @@ namespace Api.Backend.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Categoria> RecuperaCategorias([FromQuery] string nomeDoFilme)
+        public IEnumerable<Categoria> RecuperaCategorias([FromQuery] string nomeDaCategoria)
         {
             return _context.Categorias;
         }

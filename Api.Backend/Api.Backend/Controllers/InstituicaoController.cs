@@ -35,7 +35,7 @@ namespace Api.Backend.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Instituicao> RecuperaInstituicaos([FromQuery] string nomeDoFilme)
+        public IEnumerable<Instituicao> RecuperaInstituicaos([FromQuery] string nomeDaInstituicao)
         {
             return _context.Instituicaos;
         }

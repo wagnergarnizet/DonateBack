@@ -35,7 +35,7 @@ namespace Api.Backend.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Usuario> RecuperaUsuarios([FromQuery] string nomeDoFilme)
+        public IEnumerable<Usuario> RecuperaUsuarios([FromQuery] string nomeDoUsuario)
         {
             return _context.Usuarios;
         }

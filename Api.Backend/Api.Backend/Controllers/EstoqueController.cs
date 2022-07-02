@@ -35,7 +35,7 @@ namespace Api.Backend.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Estoque> RecuperaEstoques([FromQuery] string nomeDoFilme)
+        public IEnumerable<Estoque> RecuperaEstoques([FromQuery] string nomeDoEstoque)
         {
             return _context.Estoques;
         }

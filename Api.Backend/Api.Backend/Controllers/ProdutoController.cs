@@ -35,7 +35,7 @@ namespace Api.Backend.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Produto> RecuperaProdutos([FromQuery] string nomeDoFilme)
+        public IEnumerable<Produto> RecuperaProdutos([FromQuery] string nomeDoProduto)
         {
             return _context.Produtos;
         }
