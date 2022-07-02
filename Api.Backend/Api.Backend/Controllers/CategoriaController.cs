@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Api.Backend.Models;
 using Api.Backend.Data.Dtos.Categoria;
 
-namespace FilmesAPI.Controllers
+namespace Api.Backend.Controllers
 {
     [ApiController]
     [Route("[controller]")]
