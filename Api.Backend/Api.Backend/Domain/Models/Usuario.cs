@@ -27,8 +27,7 @@ namespace Api.Backend.Models
 
         public Funcao Funcao { get; set; }
 
-        [JsonIgnore]
-        public virtual IEnumerable<Instituicao> Instituicaos { get; set; }
+        public virtual List<Instituicao> Instituicaos { get; set; }
 
 
     }

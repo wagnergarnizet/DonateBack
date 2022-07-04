@@ -26,5 +26,6 @@ namespace Api.Backend.Data.Dtos.Usuario
 
         public Funcao Funcao { get; set; }
 
+        public Api.Backend.Models.Instituicao Instituicaos { get; set; }
     }
 }

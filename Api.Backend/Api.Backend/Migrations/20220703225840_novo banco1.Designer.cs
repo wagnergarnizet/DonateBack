@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220629021143_Deploy2")]
-    partial class Deploy2
+    [Migration("20220703225840_novo banco1")]
+    partial class novobanco1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

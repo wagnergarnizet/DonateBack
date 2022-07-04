@@ -42,9 +42,8 @@ namespace Api.Backend.Data.Dtos.Instituicao
 
         public string Celular { get; set; }
 
-        public virtual Api.Backend.Models.Usuario Usuario { get; set; }
-        public int UsuarioId { get; set; }
+        public List<Api.Backend.Models.Usuario> Usuarios { get; set; }
 
-        public virtual IEnumerable<Api.Backend.Models.Campanha> Campanhas { get; set; }
+        public List<Api.Backend.Models.Campanha> Campanhas { get; set; }
     }
 }

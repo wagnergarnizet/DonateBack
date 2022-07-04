@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220629000205_Deploy1")]
-    partial class Deploy1
+    [Migration("20220703221143_novo banco")]
+    partial class novobanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,7 +38,7 @@ namespace Api.Backend.Migrations
                     b.Property<DateTime>("Dt_inicio")
                         .HasColumnType("datetime");
 
-                    b.Property<int?>("Fk_campanha_instituicao")
+                    b.Property<int>("InstituicaoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Logotipo")
@@ -50,7 +50,7 @@ namespace Api.Backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Fk_campanha_instituicao");
+                    b.HasIndex("InstituicaoId");
 
                     b.ToTable("Campanhas");
                 });
@@ -76,14 +76,14 @@ namespace Api.Backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("Fk_estoque_campanha")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Fk_estoque_produto")
+                    b.Property<int>("CampanhaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Observacao")
                         .HasColumnType("text");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Qtde")
                         .HasColumnType("int");
@@ -93,9 +93,9 @@ namespace Api.Backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Fk_estoque_campanha");
+                    b.HasIndex("CampanhaId");
 
-                    b.HasIndex("Fk_estoque_produto");
+                    b.HasIndex("ProdutoId");
 
                     b.ToTable("Estoques");
                 });
@@ -134,9 +134,6 @@ namespace Api.Backend.Migrations
                     b.Property<string>("Estado")
                         .HasColumnType("text");
 
-                    b.Property<int?>("Fk_instituicao_usuario")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Latitude")
                         .HasColumnType("decimal(18, 2)");
 
@@ -153,9 +150,12 @@ namespace Api.Backend.Migrations
                     b.Property<string>("Telefone")
                         .HasColumnType("text");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("Fk_instituicao_usuario");
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Instituicaos");
                 });
@@ -169,7 +169,7 @@ namespace Api.Backend.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int?>("Fk_produto_categoria")
+                    b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Imagem")
@@ -187,7 +187,7 @@ namespace Api.Backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Fk_produto_categoria");
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Produtos");
                 });
@@ -225,7 +225,9 @@ namespace Api.Backend.Migrations
                 {
                     b.HasOne("Api.Backend.Models.Instituicao", "Instituicao")
                         .WithMany("Campanhas")
-                        .HasForeignKey("Fk_campanha_instituicao");
+                        .HasForeignKey("InstituicaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Instituicao");
                 });
@@ -234,11 +236,15 @@ namespace Api.Backend.Migrations
                 {
                     b.HasOne("Api.Backend.Models.Campanha", "Campanha")
                         .WithMany("Estoques")
-                        .HasForeignKey("Fk_estoque_campanha");
+                        .HasForeignKey("CampanhaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Api.Backend.Models.Produto", "Produto")
                         .WithMany("Estoques")
-                        .HasForeignKey("Fk_estoque_produto");
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Campanha");
 
@@ -247,18 +253,22 @@ namespace Api.Backend.Migrations
 
             modelBuilder.Entity("Api.Backend.Models.Instituicao", b =>
                 {
-                    b.HasOne("Api.Backend.Models.Usuario", "usuario")
+                    b.HasOne("Api.Backend.Models.Usuario", "Usuario")
                         .WithMany("Instituicaos")
-                        .HasForeignKey("Fk_instituicao_usuario");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("usuario");
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Api.Backend.Models.Produto", b =>
                 {
                     b.HasOne("Api.Backend.Models.Categoria", "Categoria")
                         .WithMany("Produtos")
-                        .HasForeignKey("Fk_produto_categoria");
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Categoria");
                 });

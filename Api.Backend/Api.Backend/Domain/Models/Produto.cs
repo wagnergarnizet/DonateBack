@@ -28,7 +28,7 @@ namespace Api.Backend.Models
 
         public virtual Categoria Categoria { get; set; }
         public int CategoriaId { get; set; }
-        [JsonIgnore]
-        public virtual IEnumerable<Estoque> Estoques { get; set; }
+
+        public virtual List<Estoque> Estoques { get; set; }
     }
 }

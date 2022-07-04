@@ -27,6 +27,6 @@ namespace Api.Backend.Data.Dtos.Produto
         public virtual Api.Backend.Models.Categoria Categoria { get; set; }
         public int CategoriaId { get; set; }
 
-        public virtual IEnumerable<Api.Backend.Models.Estoque> Estoques { get; set; }
+        public virtual List<Api.Backend.Models.Estoque> Estoques { get; set; }
     }
 }

@@ -16,8 +16,8 @@ namespace Api.Backend.Models
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
 
-        [JsonIgnore]
-        public virtual IEnumerable<Produto> Produtos { get; set; }
+
+        public virtual List<Produto> Produtos { get; set; }
 
     }
 }

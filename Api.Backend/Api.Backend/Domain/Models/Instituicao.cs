@@ -46,8 +46,8 @@ namespace Api.Backend.Models
 
         public virtual Usuario Usuario { get; set; }
         public int UsuarioId { get; set; }
-        [JsonIgnore]
-        public virtual IEnumerable<Campanha> Campanhas { get; set; }
+   
+        public virtual List<Campanha> Campanhas { get; set; }
 
     }
 }

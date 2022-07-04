@@ -31,7 +31,7 @@ namespace Api.Backend.Models
         public virtual Instituicao Instituicao{ get; set; }
         public int InstituicaoId { get; set; }
     
-        public virtual IEnumerable<Estoque> Estoques { get; set; }
+        public virtual List<Estoque> Estoques { get; set; }
 
     }
 }

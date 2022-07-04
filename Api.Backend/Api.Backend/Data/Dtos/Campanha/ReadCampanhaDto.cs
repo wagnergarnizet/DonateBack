@@ -29,6 +29,6 @@ namespace Api.Backend.Data.Dtos.Campanha
         public  Api.Backend.Models.Instituicao Instituicao { get; set; }
         public int InstituicaoId { get; set; }
 
-        public virtual IEnumerable<Api.Backend.Models.Estoque> Estoques { get; set; }
+        public virtual List<Api.Backend.Models.Estoque> Estoques { get; set; }
     }
 }
