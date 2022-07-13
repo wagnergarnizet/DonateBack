@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Api.Backend.Models
+namespace Api.Backend.Domain.Models
 {
     public class Instituicao
     {
@@ -16,6 +16,10 @@ namespace Api.Backend.Models
 
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
+
+        [Required(ErrorMessage = "O campo de Email é obrigatório")]
+        [EmailAddress(ErrorMessage = "Email em formato inválido.")]
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "O campo de Cnpj é obrigatório")]
         public string Cnpj { get; set; }
@@ -48,6 +52,7 @@ namespace Api.Backend.Models
         public int UsuarioId { get; set; }
    
         public virtual List<Campanha> Campanhas { get; set; }
+        public virtual List<Maladireta> Maladiretas { get; set; }
 
     }
 }

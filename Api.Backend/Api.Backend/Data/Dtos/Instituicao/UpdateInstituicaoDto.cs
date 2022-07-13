@@ -15,6 +15,10 @@ namespace Api.Backend.Data.Dtos.Instituicao
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
 
+        [Required(ErrorMessage = "O campo de Email é obrigatório")]
+        [EmailAddress(ErrorMessage = "Email em formato inválido.")]
+        public string Email { get; set; }
+
         [Required(ErrorMessage = "O campo de Cnpj é obrigatório")]
         public string Cnpj { get; set; }
 

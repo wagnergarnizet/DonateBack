@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Api.Backend.Models
+namespace Api.Backend.Domain.Models
 {
     public class Categoria
     {

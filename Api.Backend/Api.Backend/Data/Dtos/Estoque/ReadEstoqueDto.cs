@@ -15,9 +15,9 @@ namespace Api.Backend.Data.Dtos.Estoque
         public int Qtde { get; set; }
         public Tipo Tipo { get; set; }
         public string Observacao { get; set; }
-        public virtual Api.Backend.Models.Produto Produto { get; set; }
+        public virtual Api.Backend.Domain.Models.Produto Produto { get; set; }
         public int ProdutoId { get; set; }
-        public virtual Api.Backend.Models.Campanha Campanha { get; set; }
+        public virtual Api.Backend.Domain.Models.Campanha Campanha { get; set; }
         public int CampanhaId { get; set; }
     }
 }

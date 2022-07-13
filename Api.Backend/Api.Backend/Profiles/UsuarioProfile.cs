@@ -1,5 +1,5 @@
 ﻿using Api.Backend.Data.Dtos.Usuario;
-using Api.Backend.Models;
+using Api.Backend.Domain.Models;
 using AutoMapper;
 using System;
 using System.Collections.Generic;

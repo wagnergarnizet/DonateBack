@@ -24,9 +24,9 @@ namespace Api.Backend.Data.Dtos.Produto
 
         public bool Ativo { get; set; }
 
-        public virtual Api.Backend.Models.Categoria Categoria { get; set; }
+        public virtual Api.Backend.Domain.Models.Categoria Categoria { get; set; }
         public int CategoriaId { get; set; }
 
-        public virtual List<Api.Backend.Models.Estoque> Estoques { get; set; }
+        public virtual List<Api.Backend.Domain.Models.Estoque> Estoques { get; set; }
     }
 }

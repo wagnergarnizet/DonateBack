@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Api.Backend.Models;
+using Api.Backend.Domain.Models;
 using Api.Backend.Data.Dtos.Categoria;
 
 namespace Api.Backend.Controllers

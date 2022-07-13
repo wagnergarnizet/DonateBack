@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Api.Backend.Models
+namespace Api.Backend.Domain.Models
 {
     public class Estoque
     {

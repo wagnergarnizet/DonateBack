@@ -17,7 +17,7 @@ namespace Api.Backend.Data.Dtos.Categoria
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
 
-        public virtual List<Api.Backend.Models.Produto> Produtos { get; set; }
+        public virtual List<Api.Backend.Domain.Models.Produto> Produtos { get; set; }
 
     }
 }

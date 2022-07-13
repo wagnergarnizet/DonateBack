@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Api.Backend.Models;
+using Api.Backend.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Backend.Data
@@ -30,10 +30,16 @@ namespace Api.Backend.Data
                 .WithMany(instituicao => instituicao.Campanhas)
                 .HasForeignKey(campanha => campanha.InstituicaoId);
 
+            builder.Entity<Maladireta>()
+                .HasOne(campanha => campanha.Instituicao)
+                .WithMany(maladireta => maladireta.Maladiretas)
+                .HasForeignKey(campanha => campanha.InstituicaoId);
+
             builder.Entity<Instituicao>()
                 .HasOne(instituicao => instituicao.Usuario)
                 .WithMany(usuario => usuario.Instituicaos)
                 .HasForeignKey(instituicao => instituicao.UsuarioId);
+
 
             builder.Entity<Produto>()
                 .HasOne(produto => produto.Categoria)
@@ -46,6 +52,7 @@ namespace Api.Backend.Data
         public DbSet<Instituicao> Instituicaos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Maladireta> Maladiretas { get; set; }
 
     }
 }
