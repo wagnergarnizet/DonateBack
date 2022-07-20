@@ -12,6 +12,7 @@ COPY . .
 WORKDIR "/src/Api.Backend"
 RUN dotnet build "Api.Backend.csproj" -c Release -o /app/build
 
+
 FROM build AS publish
 RUN dotnet publish "Api.Backend.csproj" -c Release -o /app/publish
 
