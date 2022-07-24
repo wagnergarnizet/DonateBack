@@ -21,7 +21,7 @@ namespace Api.Backend.Domain.Models
         [EmailAddress(ErrorMessage = "Email em formato inválido.")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "O campo de Senha é obrigatório")]
+        [Required(ErrorMessage = "O campo de senha é obrigatório")]
         public string Senha { get; set; }
 
         public Boolean Ativo { get; set; }
