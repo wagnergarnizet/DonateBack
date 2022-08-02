@@ -28,14 +28,5 @@ stages:
         tags: |
           $(tag)
 
-    - task: MysqlDeploymentOnMachineGroup@1
-      inputs:
-        TaskNameSelector: 'SqlTaskFile'
-        ServerName: 'donatemysqldb'
-        DatabaseName: 'wagner123456'
-        SqlUsername: 'root'
-        SqlPassword: 'wagner123456'
-        SqlAdditionalArguments: 
-        
 
 
