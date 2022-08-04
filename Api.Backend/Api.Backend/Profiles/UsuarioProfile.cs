@@ -14,6 +14,7 @@ namespace Api.Backend.Profiles
         {
             CreateMap<CreateUsuarioDto, Usuario>();
             CreateMap<Usuario, ReadUsuarioDto>();
+            CreateMap<Usuario, LoginUsuarioDto>();
             CreateMap<UpdateUsuarioDto, Usuario>();
         }
     }

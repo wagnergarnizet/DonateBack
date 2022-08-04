@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Api.Backend.Domain.Models;
 using Api.Backend.Data.Dtos.Usuario;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Backend.Controllers
 {
@@ -34,13 +35,16 @@ namespace Api.Backend.Controllers
             return CreatedAtAction(nameof(RecuperaUsuariosPorId), new { Id = usuario.Id }, usuario);
         }
 
+
         [HttpGet]
+        [Authorize(Roles= "Administrador,Usuario")]
         public IEnumerable<Usuario> RecuperaUsuarios([FromQuery] string nomeDoUsuario)
         {
             return _context.Usuarios;
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public IActionResult RecuperaUsuariosPorId(int id)
         {
             Usuario usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.Id == id);

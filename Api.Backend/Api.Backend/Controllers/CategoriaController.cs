@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Api.Backend.Domain.Models;
 using Api.Backend.Data.Dtos.Categoria;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Backend.Controllers
 {
@@ -35,12 +36,14 @@ namespace Api.Backend.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrador,Usuario")]
         public IEnumerable<Categoria> RecuperaCategorias([FromQuery] string nomeDaCategoria)
         {
             return _context.Categorias;
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public IActionResult RecuperaCategoriasPorId(int id)
         {
             Categoria categoria = _context.Categorias.FirstOrDefault(categoria => categoria.Id == id);
