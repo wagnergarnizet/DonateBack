@@ -8,7 +8,7 @@ ENV ASPNETCORTE_ENVIROMENT=Development
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["Api.Backend/Api.Backend.csproj", "Api.Backend/"]
+COPY ["*.csproj", "Api.Backend/"]
 RUN dotnet restore "Api.Backend/Api.Backend.csproj"
 COPY . .
 WORKDIR "/src/Api.Backend"
